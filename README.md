@@ -1,1 +1,23 @@
 # Frontend-and-Backend-Site
+1. Open a terminal in the project folder:
+   cd e:\Project_Learn
+
+2. Create a virtual environment:
+   python -m venv venv
+
+3. Activate the virtual environment:
+   On Windows PowerShell:
+     .\venv\Scripts\Activate.ps1
+   On Windows CMD:
+     .\venv\Scripts\activate.bat
+
+4. Install dependencies:
+   pip install -r portfolio_website\requirements.txt
+
+5. Run the app:
+   python portfolio_website\main.py
+
+6. Open the app in your browser:
+   http://127.0.0.1:5000
+
+7. If `venv` is in GitHub, do not upload it. The repo should keep only source files and `requirements.txt`.   
