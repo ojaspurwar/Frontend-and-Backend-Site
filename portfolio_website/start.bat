@@ -16,6 +16,15 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM Check if Node.js is installed
+node --version >nul 2>&1
+if errorlevel 1 (
+    echo Error: Node.js is not installed or not in PATH
+    echo Please install Node.js from https://nodejs.org
+    pause
+    exit /b 1
+)
+
 echo [1/5] Creating virtual environment...
 python -m venv venv
 
@@ -28,17 +37,22 @@ pip install -r requirements.txt
 echo [4/5] Creating database...
 REM Database will be created automatically on first run
 
-echo [5/5] Starting server...
+echo [5/5] Starting server and tunnel...
 echo.
 echo ========================================
-echo Server is running!
+echo Server and Tunnel are running!
 echo ========================================
 echo.
-echo Open your browser to:
+echo Local access:
 echo   - Website: http://localhost:8000
 echo   - API Docs: http://localhost:8000/docs
 echo.
-echo Press Ctrl+C to stop the server
+echo The public tunnel URL will be displayed below.
+echo Press Ctrl+C to stop the tunnel (server will continue running)
 echo.
 
-python main.py
+REM Start server in background
+start "" python main.py
+
+REM Start tunnel (runs in foreground)
+npx localtunnel --port 8000
