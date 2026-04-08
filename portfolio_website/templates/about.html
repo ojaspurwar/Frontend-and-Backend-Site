@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}About - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <h1>About Me</h1>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <h2>{{ config.about.headline }}</h2>
+                <p>{{ config.about.description }}</p>
+                <p>{{ config.about.experience }}</p>
+                
+                <h3>What I Do</h3>
+                <ul>
+                    {% for item in config.what_i_do %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <h3>Technologies</h3>
+                <div class="tech-list">
+                    {% for tech in config.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,72 @@
+{
+  "personal": {
+    "name": "Ojas Purwar",
+    "title": "Web Developer",
+    "bio": "Creating beautiful and functional web experiences",
+    "email": "your.email@example.com",
+    "phone": "+1 (234) 567-890",
+    "location": "Your City, Country"
+  },
+  "about": {
+    "headline": "Hi, I'm a Developer",
+    "description": "I'm a passionate full-stack web developer with expertise in modern web technologies. I love building elegant solutions to complex problems and creating delightful user experiences.",
+    "experience": "With over 5 years of experience in web development, I've worked on projects ranging from small startups to large enterprises. My focus is on writing clean, maintainable code and delivering high-quality software."
+  },
+  "skills": [
+    {
+      "title": "Frontend",
+      "description": "HTML, CSS, JavaScript, React, Vue"
+    },
+    {
+      "title": "Backend",
+      "description": "Python, FastAPI, Django, Node.js"
+    },
+    {
+      "title": "Databases",
+      "description": "PostgreSQL, MongoDB, SQLite"
+    },
+    {
+      "title": "Tools",
+      "description": "Git, Docker, VS Code, Linux"
+    }
+  ],
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "JavaScript",
+    "React",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Linux"
+  ],
+  "what_i_do": [
+    "Full-stack web development",
+    "API design and development",
+    "Database design and optimization",
+    "Frontend development with modern frameworks",
+    "DevOps and deployment"
+  ],
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername"
+  },
+  "contact_info": [
+    {
+      "type": "Email",
+      "value": "your.email@example.com",
+      "link": "mailto:your.email@example.com"
+    },
+    {
+      "type": "Phone",
+      "value": "+1 (234) 567-890",
+      "link": "tel:+1234567890"
+    },
+    {
+      "type": "Location",
+      "value": "Your City, Country",
+      "link": ""
+    }
+  ]
+}

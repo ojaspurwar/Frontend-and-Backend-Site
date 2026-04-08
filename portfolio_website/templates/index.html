@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm {{ config.personal.name }}</h1>
+            <p class="hero-subtitle">{{ config.personal.title }}</p>
+            <div class="hero-buttons">
+                <a href="/portfolio" class="btn btn-primary">View My Work</a>
+                <a href="/contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Section -->
+<section class="featured">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            {% for skill in config.skills %}
+                <div class="skill-card">
+                    <h3>{{ skill.title }}</h3>
+                    <p>{{ skill.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
