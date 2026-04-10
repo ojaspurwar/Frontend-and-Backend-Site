@@ -3,7 +3,7 @@
     "name": "Ojas Purwar",
     "title": "Web Developer",
     "bio": "Creating beautiful and functional web experiences",
-    "email": "your.email@example.com",
+    "email": "ojaspurwar@hotmail.com",
     "phone": "+1 (234) 567-890",
     "location": "Your City, Country"
   },
@@ -48,15 +48,15 @@
     "DevOps and deployment"
   ],
   "social": {
-    "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername",
-    "twitter": "https://twitter.com/yourusername"
+    "github": "https://github.com/ojaspurwar",
+    "linkedin": "https://linkedin.com/in/ojaspurwar",
+    "twitter": "https://twitter.com/ojas_purwar"
   },
   "contact_info": [
     {
       "type": "Email",
-      "value": "your.email@example.com",
-      "link": "mailto:your.email@example.com"
+      "value": "ojaspurwar@hotmail.com",
+      "link": "mailto:ojaspurwar@hotmail.com"
     },
     {
       "type": "Phone",

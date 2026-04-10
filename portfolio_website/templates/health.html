@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Health Status - {{ config.personal.name }}{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="health-container">
+            <h1>Server Health Status</h1>
+            
+            <div class="status-grid">
+                <!-- Server Status -->
+                <div class="status-card">
+                    <h3>Server Status</h3>
+                    <div class="status-item">
+                        <span class="status-label">Status:</span>
+                        <span class="status-value status-good">{{ health_data.status|upper }}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">IP Address:</span>
+                        <span class="status-value">{{ health_data.server.ip_address }}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Uptime:</span>
+                        <span class="status-value">{{ health_data.server.uptime }}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Last Checked:</span>
+                        <span class="status-value">{{ health_data.timestamp }}</span>
+                    </div>
+                </div>
+                
+                <!-- System Resources -->
+                <div class="status-card">
+                    <h3>System Resources</h3>
+                    <div class="status-item">
+                        <span class="status-label">CPU Usage:</span>
+                        <span class="status-value">{{ health_data.system.cpu_usage }}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Memory Usage:</span>
+                        <span class="status-value">{{ health_data.system.memory_usage }}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Memory Used:</span>
+                        <span class="status-value">{{ health_data.system.memory_used }} / {{ health_data.system.memory_total }}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Disk Usage:</span>
+                        <span class="status-value">{{ health_data.system.disk_usage }}</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Disk Used:</span>
+                        <span class="status-value">{{ health_data.system.disk_used }} / {{ health_data.system.disk_total }}</span>
+                    </div>
+                </div>
+                
+                <!-- Database Status -->
+                <div class="status-card">
+                    <h3>Database Status</h3>
+                    <div class="status-item">
+                        <span class="status-label">Connection:</span>
+                        <span class="status-value {{ 'status-good' if health_data.database.status == 'Connected' else 'status-bad' }}">
+                            {{ health_data.database.status }}
+                        </span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Total Messages:</span>
+                        <span class="status-value">{{ health_data.database.contacts_count }}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="health-info">
+                <a href="/" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

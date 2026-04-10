@@ -106,3 +106,44 @@ function showLoading(button) {
         button.disabled = false;
     };
 }
+
+// Handle contact form submission
+async function handleSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const submitButton = form.querySelector('button[type="submit"]');
+    const statusDiv = document.getElementById('formStatus');
+    
+    // Show loading state
+    const resetButton = showLoading(submitButton);
+    
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            })
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            statusDiv.innerHTML = '<p style="color: #10b981;">Message sent successfully! I\'ll get back to you soon.</p>';
+            form.reset();
+        } else {
+            const error = await response.json();
+            statusDiv.innerHTML = `<p style="color: #ef4444;">Error: ${error.detail || 'Failed to send message'}</p>`;
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        statusDiv.innerHTML = '<p style="color: #ef4444;">Error: Failed to send message. Please try again.</p>';
+    } finally {
+        resetButton();
+    }
+}
